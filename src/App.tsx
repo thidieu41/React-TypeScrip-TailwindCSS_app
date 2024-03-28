@@ -1,40 +1,36 @@
-import { useState } from "react";
 import "./App.css";
-import { DefaultTable } from "./components/UsersTable";
-import UserDialog from "./components/UserForm";
+import HeaderComponent from "./Layout/Header";
+import BannerCompoent from "./components/Banner";
+import BestSellerComponent from "./components/BestSeller";
+import CollectionComponent from "./components/Collection";
+import ProductsComponent from "./components/Products";
+import TestimonialComponent from "./components/Testimonial";
 
 function App() {
-  const [openDialog, setOpenDialog] = useState(false);
-  const [updateId, setIdUpdate] = useState("");
-
-  const handleOpenModal = (newValue: boolean) => {
-    setOpenDialog(newValue);
-  };
-
-  const handleSetIdEdit = (id: string) => {
-    handleOpenModal(id ? true : false);
-    setIdUpdate(id);
-  };
-
   return (
-    <div className="m-12">
-      <div className="pb-12 flex justify-between">
-        <p className="text-xl font-bold">User List</p>
-        <button
-          type="button"
-          className="inline-flex w-full justify-center rounded-md bg-gray-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-500 sm:ml-3 sm:w-auto"
-          onClick={() => handleOpenModal(true)}
-        >
-          Add New User
-        </button>
+    <div>
+      <div className="bg-[#CFCFCF]">
+        <div className="mx-24 pt-10">
+          <HeaderComponent />
+          <BannerCompoent />
+        </div>
       </div>
-      <DefaultTable handleSetIdEdit={handleSetIdEdit} />
-      <UserDialog
-        open={openDialog}
-        handleOpenModal={handleOpenModal}
-        updateId={updateId}
-        handleSetIdEdit={handleSetIdEdit}
-      />
+      <div className="mx-24 pt-10">
+        <CollectionComponent />
+      </div>
+      <div className="bg-[#CFCFCF]">
+        <div className="mx-24 pt-10">
+          <BestSellerComponent />
+        </div>
+      </div>
+      <div className="mx-24 pt-10">
+        <ProductsComponent />
+      </div>
+      <div className="bg-[#CFCFCF]">
+        <div className="mx-24 pt-10">
+          <TestimonialComponent />
+        </div>
+      </div>
     </div>
   );
 }
