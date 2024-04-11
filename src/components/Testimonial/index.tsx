@@ -37,7 +37,7 @@ const TestimonialComponent = () => {
         {testimonialList.map((item, index) => (
           <div key={index} className="text-center p-8">
             <p className="font-bold leading-relaxed">{item.tile}</p>
-            <p className="text-sm leading-relaxed mt-4">{item.content}</p>
+            <p className="text-sm leading-loose mt-4">{item.content}</p>
             <div className="mt-10">
               <img
                 src={item.url}

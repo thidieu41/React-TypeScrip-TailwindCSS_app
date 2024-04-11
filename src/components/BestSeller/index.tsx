@@ -41,8 +41,8 @@ const BestSellerComponent = () => {
       </div>
       <div className="col-span-2">
         <div className="flex gap-10 justify-center">
-          {products.map((item) => (
-            <div>
+          {products.map((item, index) => (
+            <div key={index}>
               <img src={item.url} alt="product" className="w-[320px] h-[65%]" />
               <div className="bg-white p-4">
                 <RatingElement ratingValue={item.rate} />

@@ -20,6 +20,7 @@ const ProductsComponent = () => {
       <ul className="flex justify-center gap-10 mt-2">
         {categories.map((item) => (
           <li
+          key={item.id}
             className={`cursor-pointer space-x-2 px-2 pt-5 pb-2 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110  ${
               item.id === selectCategory
                 ? "font-bold border-b-2 border-[#CFCFCF] text-[#CFCFCF]"

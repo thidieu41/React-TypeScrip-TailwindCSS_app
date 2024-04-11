@@ -1,17 +1,5 @@
 import banner from "../../assets/images/banner.jpg";
 
-const CollectionList = [
-  {
-    url: "",
-  },
-  {
-    url: "",
-  },
-  {
-    url: "",
-  },
-];
-
 const fashionContent = [
   {
     number: "2024",
@@ -36,9 +24,9 @@ const CollectionComponent = () => {
         industry
       </p>
       <div className="flex m-auto justify-between gap-[60px] mt-14">
-        {CollectionList.map((item) => (
+        {Array(3).fill(0).map((item, index) => (
           <div
-            key={item.url}
+            key={index}
             className=" h-[300px] w-full bg-[#CFCFCF] relative"
           >
             <button className="bg-white text-black w-[90%] absolute bottom-[20px] h-10 left-[5%] font-medium">

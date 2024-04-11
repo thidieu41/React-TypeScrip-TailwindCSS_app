@@ -8,6 +8,7 @@ const RatingElement = ({ ratingValue }: IProps) => {
         .fill(0)
         .map((value, index) => (
           <svg
+            key={index}
             className={
               index + 1 <= ratingValue
                 ? "w-3 h-3 text-yellow-300 ms-1"

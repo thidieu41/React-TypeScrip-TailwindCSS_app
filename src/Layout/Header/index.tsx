@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 
 const headerList = [
@@ -8,21 +9,28 @@ const headerList = [
 ];
 
 const HeaderComponent = () => {
+  const navigate = useNavigate();
+  const handleNavigateToLogin = () => {
+    navigate("/authen/login");
+  };
   return (
-    <div >
+    <div>
       <div className="flex justify-items-center justify-between items-center">
         <div>
           <img src={Logo} alt="logo" className="w-[140px] h-[50px]" />
         </div>
         <div className="gap-[20px] flex justify-items-center justify-center">
-          {headerList.map((headerItem) => (
-            <a className="font-bold" href={headerItem.url}>
+          {headerList.map((headerItem, index) => (
+            <a className="font-bold" href={headerItem.url} key={index}>
               {headerItem.name}
             </a>
           ))}
         </div>
         <div>
-          <button className="border-[1px] border-black border-solid rounded py-[5px] px-[20px] font-bold">
+          <button
+            className="border-[1px] border-black border-solid rounded py-[5px] px-[20px] font-bold"
+            onClick={handleNavigateToLogin}
+          >
             LOGIN
           </button>
         </div>
